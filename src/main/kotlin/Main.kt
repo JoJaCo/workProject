@@ -8,7 +8,6 @@ fun main(args: Array<String>) {
 
 
 object Ui{
-    // TODO: we will move everthing in the main inot this section and continue
 
     val staff = employees
     var keepChecking = true
@@ -38,8 +37,9 @@ object Ui{
 
             //result from checking the database
             if (isInDataBase) {
-                println("Welcome ${name}, hope your having a good day ")
-                commands()
+                println("Welcome ${name}, hope you are having a great day ")
+                val userCommand = commands()
+                println(userCommand)
             } else {
                 println("Match not found")
 
@@ -59,10 +59,10 @@ object Ui{
     private fun commands() : String {
 
         val result = when(callOutListOption()){
-            "1" -> "Call out due to being sick "
-            "2" -> "Call out due to being sick "
-            "3" -> "Call out due to being sick "
-            "4" -> "Call out due to being sick "
+            "1" -> // TODO: call Times.kt to display the users times
+            "2" -> "Call with Sick Times "
+            "3" -> "Call with personal Time "
+            "4" -> "request vacation times "
             else -> "Invalid"
         }
 
@@ -79,7 +79,7 @@ object Ui{
         println("2: Calling out due to Doctors appointment ")
         println("3: Calling out due to Personal matters ")
         println("4: other ")
-        println("Please input 1,2 or 3 depending on your callout ")
+        println("Please input 1,2, 3 or 4 depending on your callout ")
         return readLine()?.trim() ?:""
 
     }
