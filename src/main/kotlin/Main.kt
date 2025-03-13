@@ -25,7 +25,7 @@ object Ui{
 
             println()
             println("please enter your user name: ")
-            val name = readLine()?.trim() ?: ""
+            val userName = readLine()?.trim() ?: ""
 
             println()
             println("Please enter your user id(4325):")
@@ -34,14 +34,12 @@ object Ui{
 
 
             //add the function for the commands
+             val isInDataBase = checkUserInput(userName,userIdNum,staff)
 
-            if (checkUserInput(name,userIdNum,staff)){
-                "EE is in the system"
-            } else{
-                "EE is not in the system"
-            }
-
-
+            if (isInDataBase) {
+                EmployeesInfo(userName,userIdNum)
+            } else {
+                println("EE is not in the system") }
 
 
 
@@ -52,20 +50,27 @@ object Ui{
         }
 
     }
-        private class userInfo(arg: String?) {
+
+    /*the end of our while loop*/
+    private class EmployeesInfo(name: String, id: Int){
+        private val name = name
+        private val id = id
 
 
 
-        }
-        /*the end of our while loop*/
+
+    }
+
+
+
 
 
 
 
     //below are our functions
-    private fun commands(userNum: Int) : String {
+    private fun commands(option: String) : String {
 
-        val result = when(callOutListOption()){
+        val result = when(option){
             "1" -> "Here are your hours"
             "2" -> "Call with Sick Times "
             "3" -> "Call with personal Time "
@@ -76,7 +81,7 @@ object Ui{
         return result
     }
 
-    private fun callOutListOption(): String? {
+     private fun callOutListOption() {
 
         println("Here are your list of options for call outs: ")
         println("1: Display your Times ")
@@ -84,16 +89,18 @@ object Ui{
         println("3: Call with personal Time")
         println("4: request vacation times ")
         println("Please input 1,2, 3 or 4 depending on your callout ")
-        return readLine()?.trim() ?:""
+         val option = readLine()?.trim() ?:""
+        commands(option)
 
     }
+
 
 
 }
 
 
-fun checkUserInput(name: String, id:Int, employees: List<Users>): Boolean {
-    return employees.contains(Users(name, id))
+fun checkUserInput(userName: String, id:Int, employees: List<Users>): Boolean {
+    return employees.contains(Users(userName, id))
 
 
 }
