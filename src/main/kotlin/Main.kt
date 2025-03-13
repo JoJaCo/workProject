@@ -10,8 +10,9 @@ fun main(args: Array<String>) {
 object Ui{
 
     val staff = employees
+    val employeesTimes = userTimes
     var keepChecking = true
-
+    /*info for our program from data classes */
 
     init {
         println("************************")
@@ -29,21 +30,18 @@ object Ui{
             println()
             println("Please enter your user id(4325):")
             val userId = readLine()?.trim() ?: ""
-            val userNum = userId.toInt()
+            val userIdNum = userId.toInt()
 
 
-            //sending the info to check with the database
-            val isInDataBase = checkUserInput(name, userNum, staff)
+            //add the function for the commands
 
-            //result from checking the database
-            if (isInDataBase) {
-                println("Welcome ${name}, hope you are having a great day ")
-                val userCommand = commands()
-                println(userCommand)
-            } else {
-                println("Match not found")
-
+            if (checkUserInput(name,userIdNum,staff)){
+                "EE is in the system"
+            } else{
+                "EE is not in the system"
             }
+
+
 
 
 
@@ -52,14 +50,23 @@ object Ui{
             keepChecking = keepGoing == "yes"
 
         }
+
+    }
+        private class userInfo(arg: String?) {
+
+
+
+        }
         /*the end of our while loop*/
 
 
-    }
-    private fun commands() : String {
+
+
+    //below are our functions
+    private fun commands(userNum: Int) : String {
 
         val result = when(callOutListOption()){
-            "1" -> // TODO: call Times.kt to display the users times
+            "1" -> "Here are your hours"
             "2" -> "Call with Sick Times "
             "3" -> "Call with personal Time "
             "4" -> "request vacation times "
@@ -69,16 +76,13 @@ object Ui{
         return result
     }
 
-
-
-
     private fun callOutListOption(): String? {
 
         println("Here are your list of options for call outs: ")
-        println("1: Calling out due to being Sick ")
-        println("2: Calling out due to Doctors appointment ")
-        println("3: Calling out due to Personal matters ")
-        println("4: other ")
+        println("1: Display your Times ")
+        println("2: Call with Sick Times ")
+        println("3: Call with personal Time")
+        println("4: request vacation times ")
         println("Please input 1,2, 3 or 4 depending on your callout ")
         return readLine()?.trim() ?:""
 
