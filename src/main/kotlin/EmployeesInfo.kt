@@ -1,7 +1,7 @@
 open class EmployeesInfo(userName:String = "Jorge", id: Int = 1234) {
 
 
-     fun callOutListOption(userName: String) {
+     fun getMyInfo(userName: String) {
 
         println("Here are your list of options ${userName}for call outs: ")
         println("1: Display your Times ")

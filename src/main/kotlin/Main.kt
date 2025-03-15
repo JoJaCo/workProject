@@ -39,7 +39,7 @@ object Ui{
 
             if (isInDataBase) {
 
-                employee.callOutListOption(userName)
+                employee.getMyInfo(userName)
 
 
             } else {
