@@ -10,7 +10,6 @@ fun main(args: Array<String>) {
 object Ui{
 
     val staff = employees
-    val employeesTimes = userTimes
     var keepChecking = true
     var employee = EmployeesInfo()
 
