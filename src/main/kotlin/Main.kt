@@ -10,6 +10,7 @@ fun main(args: Array<String>) {
 object Ui{
 
     val staff = employees
+    val employeesTimes = userTimes
     var keepChecking = true
     var employee = EmployeesInfo()
 
@@ -39,7 +40,7 @@ object Ui{
 
             if (isInDataBase) {
 
-                employee.callOutListOption(userName,userIdNum)
+                employee.callOutListOption(userName)
 
 
             } else {
@@ -51,9 +52,15 @@ object Ui{
 
         }
 
-     }
+    }
 
     }
+
+
+
+
+
+
 
 fun checkUserInput(userName: String, id:Int, employees: List<Users>): Boolean {
     return employees.contains(Users(userName, id))

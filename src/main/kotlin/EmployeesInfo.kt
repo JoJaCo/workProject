@@ -1,9 +1,9 @@
 open class EmployeesInfo(userName:String = "Jorge", id: Int = 1234) {
 
 
-     fun callOutListOption(userName: String,id: Int) {
+     fun callOutListOption(userName: String) {
 
-        println("${userName}, here are your list of options for call outs: ")
+        println("Here are your list of options ${userName}for call outs: ")
         println("1: Display your Times ")
         println("2: Call with Sick Times ")
         println("3: Call with personal Time")
@@ -12,14 +12,14 @@ open class EmployeesInfo(userName:String = "Jorge", id: Int = 1234) {
 
         val option = readLine()?.trim() ?:""
 
-        println(commands(option,userName,id))
+        commands(option)
 
     }
 
-    private fun commands(option: String,userName: String,id: Int) : String {
+    private fun commands(option: String) : String {
 
         val result = when(option){
-            "1" -> "Here are your hours ${userName}, ${getTimes(id)}"
+            "1" -> "Here are your hours"
             "2" -> "Call with Sick Times "
             "3" -> "Call with personal Time "
             "4" -> "request vacation times "
