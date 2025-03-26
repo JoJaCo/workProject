@@ -11,7 +11,8 @@ object Ui{
 
     val staff = employees
     var keepChecking = true
-    var employee = EmployeesInfo()
+    val employee = EmployeesInfo()
+
 
     /*info for our program from data classes */
 
@@ -38,8 +39,10 @@ object Ui{
             val isInDataBase = checkUserInput(userName,userIdNum,staff)
 
             if (isInDataBase) {
+                employee.listOfOptions(userName, userIdNum)
 
-                employee.getMyInfo(userName)
+
+
 
 
             } else {
