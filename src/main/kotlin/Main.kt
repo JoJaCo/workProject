@@ -30,7 +30,7 @@ object Ui{
             val userName = readLine()?.trim() ?: ""
 
             println()
-            println("Please enter your user id(4325):")
+            println("Hello ${userName} Please enter your user id(4325):")
             val userId = readLine()?.trim() ?: ""
             val userIdNum = userId.toInt()
 

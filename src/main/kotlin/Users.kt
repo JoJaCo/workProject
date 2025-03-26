@@ -6,6 +6,8 @@ data class Times(val userId: Int,
                  var sickTime: Double,
                  var vacationTime: Double,
                  var personal: Double){
+
+    //make Times iterable
     operator fun iterator() = listOf(userId, sickTime, vacationTime, personal).iterator()
 
 
@@ -27,7 +29,7 @@ val employees = listOf(
 
 
 
-fun emploreesTimes(id: Int) {
+fun emploeesTimes(id: Int) {
 
     val userTimes = listOf(
         Times(1001, 14.00, 30.00, 40.00),
@@ -43,16 +45,10 @@ fun emploreesTimes(id: Int) {
     )
 
     for (row in userTimes){
-        for (num in row){
-            if (num == id){
-                println(row)
-            }else{
-                println("x")
-            }
-
+        if (row.userId == id) {
+            println(row)
+            break  // Exit if you only want the first match
         }
-        println()
-
     }
 
 
