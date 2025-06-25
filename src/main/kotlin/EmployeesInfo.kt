@@ -19,7 +19,7 @@ open class EmployeesInfo(userName:String = "Jorge", id: Int = 1234) {
     private fun commands(option: String, userId: Int)  {
 
         when(option){
-            "1" -> emploeesTimes(userId)
+            "1" -> employeeTimes(userId)
             "2" -> "Call with Sick Times "
             "3" -> "Call with personal Time "
             "4" -> "request vacation times "

@@ -1,3 +1,4 @@
+import functions.checkUserInput
 
 fun main(args: Array<String>) {
 
@@ -9,9 +10,9 @@ fun main(args: Array<String>) {
 
 object Ui{
 
-    val staff = employees
-    var keepChecking = true
-    val employee = EmployeesInfo()
+    private val staff = employees
+    private var keepChecking = true
+    private val employee = EmployeesInfo()
 
 
     /*info for our program from data classes */
@@ -64,8 +65,3 @@ object Ui{
 
 
 
-fun checkUserInput(userName: String, id:Int, employees: List<Users>): Boolean {
-    return employees.contains(Users(userName, id))
-
-
-}

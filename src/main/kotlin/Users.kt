@@ -1,5 +1,3 @@
-import java.awt.List
-
 data class Users(val name:String, val id: Int)
 
 data class Times(val userId: Int,
@@ -29,7 +27,7 @@ val employees = listOf(
 
 
 
-fun emploeesTimes(id: Int) {
+fun employeeTimes(id: Int) {
 
     val userTimes = listOf(
         Times(1001, 14.00, 30.00, 40.00),
