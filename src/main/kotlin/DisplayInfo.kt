@@ -1,5 +1,6 @@
+import model.employeeTimes
 
-open class EmployeesInfo(userName:String = "Jorge", id: Int = 1234) {
+open class DisplayInfo(userName:String = "Jorge", id: Int = 1234) {
 
 
      fun listOfOptions(userName: String, userId: Int) {

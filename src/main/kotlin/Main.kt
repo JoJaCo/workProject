@@ -1,4 +1,5 @@
 import functions.checkUserInput
+import model.getEmployee
 
 fun main(args: Array<String>) {
 
@@ -10,9 +11,9 @@ fun main(args: Array<String>) {
 
 object Ui{
 
-    private val staff = employees
+    private val staff = getEmployee()
     private var keepChecking = true
-    private val employee = EmployeesInfo()
+    private val employee = DisplayInfo()
 
 
     /*info for our program from data classes */
